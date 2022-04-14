@@ -56,8 +56,7 @@ techstar_1  | AH00558: apache2: Could not reliably determine the server's fully 
 </html>% 
 ```
 Here is the uglier version of it:\
-<img width="486" alt="image" src="https://user-images.githubusercontent.com/65661406/163389270-57f3d842-5daa-46fe-b920-1ae38e848156.png">
-
+<img width="391" alt="image" src="https://user-images.githubusercontent.com/65661406/163390181-46d9feb1-a5b0-4ed9-b384-030092abc791.png">
 
 5. If you need to go inside the container, then use docker exec.
 ```
