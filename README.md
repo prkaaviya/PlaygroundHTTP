@@ -40,7 +40,35 @@ Creating my-http-playground_techstar_1 ... done
 Attaching to my-http-playground_techstar_1
 techstar_1  | AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.19.0.2. Set the 'ServerName' directive globally to suppress this message
 ```
+3. Connect to the server from host machine. Make sure the port number on the host is the one mapped to 80 on container.
+```
+17:32:44:~/Desktop/projects/gitpost/my-http-playground % curl http://localhost:14080/index.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome</title>
+</head>
+<body>
+    <h1>Personal Website - Kaaviya</h1>
+    <h2>Index page</h2>   
+</body>
+</html>% 
+```
+Here is the uglier version of it:\
+<img width="486" alt="image" src="https://user-images.githubusercontent.com/65661406/163389270-57f3d842-5daa-46fe-b920-1ae38e848156.png">
 
+
+5. If you need to go inside the container, then use docker exec.
+```
+docker exec -it my-http-playground_techstar_1 bash
+```
+5. Some Apache commands to troubleshoot if run into errors.
+```
+apachectl status
+apachectl -S
+a2ensite <your-apache-file>.conf
+```
 
 ### Improvements
 - Process HTTPS/TLS requests (with client authentication if needed).
