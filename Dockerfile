@@ -13,6 +13,7 @@ COPY ./html/index.html /var/www/html/mysite
 
 RUN a2dissite 000-default.conf
 RUN a2ensite mysite.conf
+RUN a2enmod headers
 
 EXPOSE 8080
 

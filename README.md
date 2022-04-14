@@ -1,21 +1,27 @@
 # my-http-playground
 
-### Description 
+### Description
+
 Set up Apache HTTP server inside a docker container and listen on an external port on the host machine.
 
 ### Usage
+
 Use it when you need a dummy HTTP server to listen to a port.
 
 ### How-to
+
 1. Clone the repo.
+
 ```
 git clone https://github.com/prkaaviya/my-http-playground.git
 ```
+
 2. Execute run_server.sh.
+
 ```
 bash run_server.sh
 Building techstar
-[+] Building 4.2s (13/13) FINISHED                                                                                                                                         
+[+] Building 4.2s (13/13) FINISHED
  => [internal] load build definition from Dockerfile                                                                                                                  0.0s
  => => transferring dockerfile: 499B                                                                                                                                  0.0s
  => [internal] load .dockerignore                                                                                                                                     0.0s
@@ -40,7 +46,9 @@ Creating my-http-playground_techstar_1 ... done
 Attaching to my-http-playground_techstar_1
 techstar_1  | AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.19.0.2. Set the 'ServerName' directive globally to suppress this message
 ```
+
 3. Connect to the server from host machine. Make sure the port number on the host is the one mapped to 80 on container.
+
 ```
 17:32:44:~/Desktop/projects/gitpost/my-http-playground % curl http://localhost:14080/index.html
 <!DOCTYPE html>
@@ -51,24 +59,35 @@ techstar_1  | AH00558: apache2: Could not reliably determine the server's fully 
 </head>
 <body>
     <h1>Personal Website - Kaaviya</h1>
-    <h2>Index page</h2>   
+    <h2>Index page</h2>
 </body>
-</html>% 
+</html>%
 ```
+
 Here is the uglier version of it:\
 <img width="391" alt="image" src="https://user-images.githubusercontent.com/65661406/163390181-46d9feb1-a5b0-4ed9-b384-030092abc791.png">
 
-5. If you need to go inside the container, then use docker exec.
+4. If you need to go inside the container, then use docker exec.
+
 ```
 docker exec -it my-http-playground_techstar_1 bash
 ```
+
 5. Some Apache commands to troubleshoot if run into errors.
+
 ```
 apachectl status
 apachectl -S
 a2ensite <your-apache-file>.conf
 ```
 
+6. Use this to stop and remove running docker containers.
+
+```
+docker stop $(docker ps -aq); docker rm $(docker ps -aq);
+```
+
 ### Improvements
+
 - Process HTTPS/TLS requests (with client authentication if needed).
 - Create reverse proxy for requests from HTTP to HTTPS.
