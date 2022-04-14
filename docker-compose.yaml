@@ -1,0 +1,8 @@
+version: '3.1'
+services:
+    techstar:
+        build:
+            context: .
+            dockerfile: Dockerfile
+        ports:
+            - "${HOST_HTTP_PORT}:80"
