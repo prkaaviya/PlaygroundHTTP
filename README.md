@@ -1,4 +1,4 @@
-# my-http-playground
+# PlaygroundHTTP
 
 ### Description
 
@@ -13,7 +13,7 @@ Use it when you need a dummy HTTP server to listen to a port.
 1. Clone the repo.
 
 ```
-git clone https://github.com/prkaaviya/my-http-playground.git
+git clone git@github.com:prkaaviya/PlaygroundHTTP.git
 ```
 
 2. Execute run_server.sh.
